@@ -160,8 +160,8 @@ export default function Steal() {
                       </div>
                     </div>
                     <p className="mt-4 text-muted-foreground">
-                      "I had a great experience renting with this company. The\n process was smooth and the car was in
-                      excellent\n condition."
+                    &quot;I had a great experience renting with this company. The\n process was smooth and the car was in
+                      excellent\n condition.&quot;
                     </p>
                   </CardContent>
                 </Card>
@@ -184,8 +184,8 @@ export default function Steal() {
                       </div>
                     </div>
                     <p className="mt-4 text-muted-foreground">
-                      "I was impressed by the wide selection of vehicles and\n the competitive prices. I'll definitely
-                      be renting from\n them again."
+                    &quot;I was impressed by the wide selection of vehicles and\n the competitive prices. I&apos;ll definitely
+                      be renting from\n them again.&quot;
                     </p>
                   </CardContent>
                 </Card>
@@ -208,8 +208,8 @@ export default function Steal() {
                       </div>
                     </div>
                     <p className="mt-4 text-muted-foreground">
-                      "The rental process was quick and easy, and the staff\n was very helpful. I would definitely
-                      recommend this\n company to anyone looking to rent a car."
+                    &quot;The rental process was quick and easy, and the staff\n was very helpful. I would definitely
+                      recommend this\n company to anyone looking to rent a car.&quot;
                     </p>
                   </CardContent>
                 </Card>
@@ -316,7 +316,7 @@ export default function Steal() {
                   <CarIcon className="w-12 h-12 text-primary" />
                   <h3 className="text-xl font-semibold">Drive</h3>
                   <p className="text-muted-foreground">
-                    Pick up your vehicle and enjoy the ride. We'll take care of the rest.
+                    Pick up your vehicle and enjoy the ride. We&apos;ll take care of the rest.
                   </p>
                 </div>
               </div>
