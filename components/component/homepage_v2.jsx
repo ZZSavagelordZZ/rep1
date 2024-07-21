@@ -22,53 +22,117 @@ archivo({
 To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
-**/
+
+
+
+  <header className="bg-primary text-primary-foreground py-4 md:py-6">
+        <div className="container px-4 md:px-6 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Avatar className="h-9 w-9">
+                  <AvatarImage src="/placeholder-user.jpg" />
+                  <AvatarFallback>JP</AvatarFallback>
+                  <span className="sr-only">Toggle user menu</span>
+                </Avatar>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>My Account</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Logout</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link href="#" className="text-lg font-medium" prefetch={false}>
+              Acme Rentals
+            </Link>
+          </div>
+          <nav className="hidden md:flex gap-4 sm:gap-6">
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}>
+              Home
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}>
+              Vehicles
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}>
+              Offers
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}>
+              About
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}>
+              Contact
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+
+        **/
 import Link from "next/link"
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
-import { Separator } from "@/components/ui/separator"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+import carImage from '@/components/ui/car.png'; 
 export function Homepage_v2() {
   return (
     (<div className="flex flex-col min-h-dvh">
       <header
-        className="flex items-center justify-between h-16 px-4 md:px-6 border-b bg-background">
-        <nav className="flex items-center gap-4 md:gap-6">
+        className="flex items-center justify-between h-16 px-4 md:px-6 border-b bg-primary text-primary-foreground py-6 md:py-12">
+        <nav className=" md:flex gap-4 sm:gap-6">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
-            <CarIcon className="w-6 h-6" />
-            <span className="text-lg font-semibold">Renta</span>
+            <CarIcon className="w-6 h-6 " />
+            <span className="text-lg font-semibold hover:text-primary-foreground">Renta</span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="#"
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-primary-foreground"
               prefetch={false}>
               Search
             </Link>
             <Link
               href="#"
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-primary-foreground"
               prefetch={false}>
               Ratings & Reviews
             </Link>
             <Link
               href="#"
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-primary-foreground"
               prefetch={false}>
               My Bookings
             </Link>
             <Link
               href="#"
-              className="text-muted-foreground hover:bg-primary hover:text-primary-foreground px-3 py-2 rounded-md transition-colors"
+              className="text-muted-foreground hover:text-primary-foreground px-3 py-2 rounded-md transition-colors"
               prefetch={false}>
               Accessibility
             </Link>
-            <DropdownMenu>
+            
+          </div>
+        </nav>
+        <div className="flex items-center gap-4">
+        <DropdownMenu>
               <DropdownMenuTrigger
-                className="flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                className="flex items-center gap-1 text-muted-foreground hover:text-foreground hover:text-primary-foreground">
                 <span>Language</span>
                 <ChevronDownIcon className="h-4 w-4" />
               </DropdownMenuTrigger>
@@ -93,24 +157,55 @@ export function Homepage_v2() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Avatar className="h-9 w-9 rounded-xl">
+                  <AvatarImage src="/placeholder-user.jpg" className="rounded-xl" />
+                  <AvatarFallback>JP</AvatarFallback>
+                  <span className="sr-only">Toggle user menu</span>
+                </Avatar>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>My Account</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Logout</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
-        </nav>
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="rounded-full">
-            <img
-              src="/placeholder.svg"
-              width="32"
-              height="32"
-              className="rounded-full"
-              alt="Avatar" />
-            <span className="sr-only">Toggle user menu</span>
-          </Button>
-        </div>
       </header>
       <main className="flex-1">
+      <div className="container px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <div className="space-y-4 right-4">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Find your perfect ride</h1>
+              <p className="text-lg md:text-xl">
+                Rent the car you need, when you need it. Our wide selection and easy booking process make it simple.
+              </p>
+              <form className="flex gap-4">
+                <input type="text" placeholder="Search by location or vehicle" className="flex-1" />
+                <Button type="submit" className="whitespace-nowrap">
+                  Search
+                </Button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
         <section
           className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
-          <Carousel>
+          
+        </section>
+       
+        <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden bg-muted">
+          <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Special Offers</h2>
+              <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl">
+                Check out our latest deals and discounts on car rentals.
+              </p></div>
+            </div>
+            <Carousel>
             <CarouselContent>
               <CarouselItem>
                 <div
@@ -178,151 +273,163 @@ export function Homepage_v2() {
               <ChevronRightIcon className="w-6 h-6" />
             </CarouselNext>
           </Carousel>
+          
         </section>
         <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10">
           <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">About Renta</h2>
-              <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl">
-                Renta is a leading car rental company that provides top-quality vehicles for all your travel needs. With
-                a wide selection of cars and exceptional customer service, we&apos;re dedicated to making your journey
-                unforgettable.
-              </p>
-            </div>
-            <Separator />
-            <div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-              <Link
-                href="#"
-                className="bg-muted rounded-lg overflow-hidden group transition-all hover:bg-accent hover:text-accent-foreground"
-                prefetch={false}>
-                <div
-                  className="p-4 md:p-6 lg:p-8 flex flex-col items-center justify-center h-full">
-                  <CarIcon className="w-10 h-10 mb-4" />
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">SUVs</h3>
-                  <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
-                    Explore the great outdoors in style.
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="bg-muted rounded-lg overflow-hidden group transition-all hover:bg-accent hover:text-accent-foreground"
-                prefetch={false}>
-                <div
-                  className="p-4 md:p-6 lg:p-8 flex flex-col items-center justify-center h-full">
-                  <SirenIcon className="w-10 h-10 mb-4" />
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">Sedans</h3>
-                  <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
-                    Comfortable and efficient for everyday driving.
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="bg-muted rounded-lg overflow-hidden group transition-all hover:bg-accent hover:text-accent-foreground"
-                prefetch={false}>
-                <div
-                  className="p-4 md:p-6 lg:p-8 flex flex-col items-center justify-center h-full">
-                  <CaravanIcon className="w-10 h-10 mb-4" />
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">Minivans</h3>
-                  <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
-                    Spacious and versatile for family adventures.
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="#"
-                className="bg-muted rounded-lg overflow-hidden group transition-all hover:bg-accent hover:text-accent-foreground"
-                prefetch={false}>
-                <div
-                  className="p-4 md:p-6 lg:p-8 flex flex-col items-center justify-center h-full">
-                  <CarIcon className="w-10 h-10 mb-4" />
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">Sports Cars</h3>
-                  <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
-                    Experience the thrill of high-performance driving.
-                  </p>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10 bg-muted">
-          <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Special Offers</h2>
-              <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl">
-                Check out our latest deals and discounts on car rentals.
-              </p>
-            </div>
-            <div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Weekend Getaway</CardTitle>
-                  <CardDescription>Rent a car for the weekend and save 20%.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold">$99/day</div>
-                    <Button className="bg-primary text-primary-foreground">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Family Road Trip</CardTitle>
-                  <CardDescription>Rent a minivan for your next family adventure and save 15%.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold">$129/day</div>
-                    <Button className="bg-primary text-primary-foreground">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Business Traveler</CardTitle>
-                  <CardDescription>Rent a sedan for your next business trip and save 10%.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold">$79/day</div>
-                    <Button className="bg-primary text-primary-foreground">Book Now</Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10">
-          <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Latest Reviews</h2>
-              <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl">
-                See what our customers are saying about their experiences with Renta.
-              </p>
-            </div>
-            <div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              <Card>
-                <CardContent>
-                  <div className="flex items-center gap-4">
-                    <Avatar className="border w-12 h-12">
-                      <AvatarImage src="/placeholder-user.jpg" />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="font-semibold">John Doe</div>
-                      <div className="text-sm text-muted-foreground">San Francisco, CA</div>
+            <div className="space-y-6 md:space-y-8">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Explore our fleet</h2>
+                <p className="text-muted-foreground md:text-lg">
+                  Choose from a wide range of vehicles to fit your needs.
+                </p>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <Card>
+                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                    <img
+                      src="/placeholder.svg"
+                      width={200}
+                      height={150}
+                      alt="Sedan"
+                      className="rounded-lg" />
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold">Sedans</h3>
+                      <p className="text-muted-foreground">Comfortable and efficient.</p>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-semibold mt-4">
-                    <div className="flex items-center gap-" />
-                  </div>
-                </CardContent>
-              </Card>
+                    <Button variant="outline">Rent Now</Button>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                    <img
+                      src="/placeholder.svg"
+                      width={200}
+                      height={150}
+                      alt="SUV"
+                      className="rounded-lg" />
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold">SUVs</h3>
+                      <p className="text-muted-foreground">Spacious and versatile.</p>
+                    </div>
+                    <Button variant="outline">Rent Now</Button>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                    <img
+                      src="/placeholder.svg"
+                      width={200}
+                      height={150}
+                      alt="Luxury"
+                      className="rounded-lg" />
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold">Luxury</h3>
+                      <p className="text-muted-foreground">Indulge in style and comfort.</p>
+                    </div>
+                    <Button variant="outline">Rent Now</Button>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                    <img
+                      src="/placeholder.svg"
+                      width={200}
+                      height={150}
+                      alt="Vans"
+                      className="rounded-lg" />
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold">Vans</h3>
+                      <p className="text-muted-foreground">Spacious and practical.</p>
+                    </div>
+                    <Button variant="outline">Rent Now</Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="bg-muted py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10">
+          <div className="max-w-10xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
+            <div className="space-y-6 md:space-y-8">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">What our customers say</h2>
+                <p className="text-muted-foreground md:text-lg">Hear from real people who have rented with us.</p>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Avatar className="border w-12 h-12">
+                        <AvatarImage src="/placeholder-user.jpg" />
+                        <AvatarFallback>JD</AvatarFallback>
+                      </Avatar>
+                      <div className="space-y-1">
+                        <div className="font-semibold">John Doe</div>
+                        <div className="flex items-center gap-1 text-xs font-medium">
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-muted-foreground">
+                    &quot;I had a great experience renting with this company. The\n process was smooth and the car was in
+                      excellent\n condition.&quot;
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Avatar className="border w-12 h-12">
+                        <AvatarImage src="/placeholder-user.jpg" />
+                        <AvatarFallback>SM</AvatarFallback>
+                      </Avatar>
+                      <div className="space-y-1">
+                        <div className="font-semibold">Sarah Miller</div>
+                        <div className="flex items-center gap-1 text-xs font-medium">
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-muted-foreground">
+                    &quot;I was impressed by the wide selection of vehicles and\n the competitive prices. I&apos;ll definitely
+                      be renting from\n them again.&quot;
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Avatar className="border w-12 h-12">
+                        <AvatarImage src="/placeholder-user.jpg" />
+                        <AvatarFallback>MJ</AvatarFallback>
+                      </Avatar>
+                      <div className="space-y-1">
+                        <div className="font-semibold">Michael Johnson</div>
+                        <div className="flex items-center gap-1 text-xs font-medium">
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                          <StarIcon className="w-4 h-4 fill-primary" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-muted-foreground">
+                    &quot;The rental process was quick and easy, and the staff\n was very helpful. I would definitely
+                      recommend this\n company to anyone looking to rent a car.&quot;
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
@@ -496,6 +603,24 @@ function XIcon(props) {
       strokeLinejoin="round">
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
+    </svg>)
+  );
+}
+function StarIcon(props) {
+  return (
+    (<svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <polygon
+        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </svg>)
   );
 }

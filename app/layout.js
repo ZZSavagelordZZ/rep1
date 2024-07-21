@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-          <div className="mt-8">{children}</div>
+          <div >{children}</div>
       </body>
     </html>
   );
