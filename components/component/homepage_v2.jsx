@@ -90,7 +90,7 @@ import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import carImage from '@/components/ui/car.png'; 
+import carImage from '../ui/car.png'; 
 export function Homepage_v2() {
   return (
     (<div className="flex flex-col min-h-dvh">
@@ -99,24 +99,24 @@ export function Homepage_v2() {
         <nav className=" md:flex gap-4 sm:gap-6">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
             <CarIcon className="w-6 h-6 " />
-            <span className="text-lg font-semibold hover:text-primary-foreground">Renta</span>
+            <span className="text-lg font-semibold hover:text-primary-foreground transition-colors">Renta</span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="#"
-              className="text-muted-foreground hover:text-primary-foreground"
+              className="text-muted-foreground hover:text-primary-foreground transition-colors"
               prefetch={false}>
               Search
             </Link>
             <Link
               href="#"
-              className="text-muted-foreground hover:text-primary-foreground"
+              className="text-muted-foreground hover:text-primary-foreground transition-colors"
               prefetch={false}>
               Ratings & Reviews
             </Link>
             <Link
               href="#"
-              className="text-muted-foreground hover:text-primary-foreground"
+              className="text-muted-foreground hover:text-primary-foreground transition-colors"
               prefetch={false}>
               My Bookings
             </Link>
@@ -132,7 +132,7 @@ export function Homepage_v2() {
         <div className="flex items-center gap-4">
         <DropdownMenu>
               <DropdownMenuTrigger
-                className="flex items-center gap-1 text-muted-foreground hover:text-foreground hover:text-primary-foreground">
+                className="flex items-center gap-1 text-muted-foreground hover:text-foreground hover:text-primary-foreground transition-colors">
                 <span>Language</span>
                 <ChevronDownIcon className="h-4 w-4" />
               </DropdownMenuTrigger>
@@ -175,29 +175,32 @@ export function Homepage_v2() {
           </div>
       </header>
       <main className="flex-1">
-      <div className="container px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 md:items-center">
-            <div className="space-y-4 right-4">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Find your perfect ride</h1>
-              <p className="text-lg md:text-xl">
-                Rent the car you need, when you need it. Our wide selection and easy booking process make it simple.
-              </p>
-              <form className="flex gap-4">
-                <input type="text" placeholder="Search by location or vehicle" className="flex-1" />
-                <Button type="submit" className="whitespace-nowrap">
-                  Search
-                </Button>
-              </form>
-            </div>
-            
-          </div>
+      <section
+       className="relative top-0 md:py-16 h-[400px] px-4 md:px-6 lg:px-10 bg-contain bg-center bg-no-repeat bg-w-full"
+       style={{ backgroundImage: `url(https://th.bing.com/th/id/OIP.pNTgRo7z0-em0RVjflhABQAAAA?rs=1&pid=ImgDetMain)` }}
+    >
+      <div className="absolute top-0 right-0 flex flex-col items-start gap-4 p-2">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Find your perfect ride</h1>
+          <p className="text-sm md:text-base mt-1 md:mt-2">
+            Rent the car you need, when you need it. Our wide selection and easy booking process make it simple.
+          </p>
+          <form className="flex gap-1 mt-2">
+            <input
+              type="text"
+              placeholder="Search by location or vehicle"
+              className="flex-1 p-1 border border-gray-300 rounded"
+            />
+            <Button type="submit" className="whitespace-nowrap p-1">
+              Search
+            </Button>
+          </form>
         </div>
-        <section
-          className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
-          
-        </section>
+      </div>
+    </section>
+
        
-        <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden bg-muted">
+        <section className="relative w-full h-[400px] md:h-[500px] lg:h-[500px] overflow-hidden bg-muted">
           <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Special Offers</h2>
@@ -207,7 +210,7 @@ export function Homepage_v2() {
             </div>
             <Carousel>
             <CarouselContent>
-              <CarouselItem>
+              <CarouselItem className='h-full'>
                 <div
                   className="flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-6 lg:px-10">
                   <div className="space-y-4 md:space-y-6 lg:space-y-8">
@@ -215,16 +218,18 @@ export function Homepage_v2() {
                       Discover the Perfect Car for Your Next Adventure
                     </h1>
                     <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground">
-                      Rent from our wide selection of top-quality vehicles.
+                    Rent the car of your dreams and explore the wilderness. 15% off for the summer season on choice* cars.
                     </p>
                     <Button className="bg-primary text-primary-foreground">Book Now</Button>
                   </div>
                   <img
-                    src="/placeholder.svg"
-                    width="400"
-                    height="300"
-                    alt="Car"
-                    className="max-w-[300px] md:max-w-[400px] lg:max-w-[500px] object-contain" />
+                  src="https://th.bing.com/th/id/OIP.m9QHgUPLEGoc9Z01TrxDEwHaEi?w=259&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                  width="400"
+                  height="300"
+                  alt="Car"
+                  className="w-[400px] h-[300px] object-cover"
+                  />
+
                 </div>
               </CarouselItem>
               <CarouselItem>
@@ -233,16 +238,15 @@ export function Homepage_v2() {
                   <div className="space-y-4 md:space-y-6 lg:space-y-8">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">Experience the Thrill of Driving</h1>
                     <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground">
-                      Rent the car of your dreams and explore the open road.
+                      Rent the car of your dreams and experience the bustling nightlife. 10% off on sports cars for a week.
                     </p>
                     <Button className="bg-primary text-primary-foreground">Book Now</Button>
                   </div>
                   <img
-                    src="/placeholder.svg"
-                    width="400"
-                    height="300"
-                    alt="Car"
-                    className="max-w-[300px] md:max-w-[400px] lg:max-w-[500px] object-contain" />
+                  src="https://th.bing.com/th/id/OIP.52cgWj3WF9wO9DhUnM7QzwHaEK?w=326&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                  alt="Car"
+                  className="w-[400px] h-[300px] object-cover"
+                  />
                 </div>
               </CarouselItem>
               <CarouselItem>
@@ -251,16 +255,17 @@ export function Homepage_v2() {
                   <div className="space-y-4 md:space-y-6 lg:space-y-8">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">Elevate Your Travel Experience</h1>
                     <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground">
-                      Rent a car that fits your lifestyle and budget.
+                      Hop in with some friends for the long haul. 20% on travel vans when renting up to a month.
                     </p>
                     <Button className="bg-primary text-primary-foreground">Book Now</Button>
                   </div>
                   <img
-                    src="/placeholder.svg"
-                    width="400"
-                    height="300"
-                    alt="Car"
-                    className="max-w-[300px] md:max-w-[400px] lg:max-w-[500px] object-contain" />
+                  src="https://th.bing.com/th/id/OIP.rKo5MDyNlbpf1d6CEltozQHaE8?w=236&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                  width="400"
+                  height="300"
+                  alt="Car"
+                  className="w-[400px] h-[300px] object-cover"
+                  />
                 </div>
               </CarouselItem>
             </CarouselContent>
@@ -434,6 +439,61 @@ export function Homepage_v2() {
           </div>
         </section>
       </main>
+      <footer
+        className="flex items-center justify-between h-fit px-4 md:px-6 border-b bg-primary text-primary-foreground py-6 md:py-12">
+          <div className="container max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
+        <div className="grid gap-1">
+          <h3 className="font-semibold">Company</h3>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            About Us
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Our Team
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Careers
+          </Link>
+        </div>
+        <div className="grid gap-1">
+          <h3 className="font-semibold">Products</h3>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Cars
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Vans
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Accessibilty Vehicles
+          </Link>
+          
+        </div>
+        <div className="grid gap-1">
+          <h3 className="font-semibold">Resources</h3>
+          <Link href="#" prefetch={false } className=" hover:text-muted-foreground  rounded-md transition-colors">
+            FAQ
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Ratings and reviews
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Support
+          </Link>
+        </div>
+        <div className="grid gap-1">
+          <h3 className="font-semibold">Legal</h3>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Privacy Policy
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Terms of Service
+          </Link>
+          <Link href="#" prefetch={false} className=" hover:text-muted-foreground  rounded-md transition-colors">
+            Cookie Policy
+          </Link>
+        </div>
+        
+      </div><h3> &#169;2024 Renta, Rent A Car Services</h3>
+        </footer>
     </div>)
   );
 }
