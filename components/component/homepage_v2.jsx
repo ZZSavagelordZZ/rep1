@@ -176,8 +176,8 @@ export function Homepage_v2() {
       </header>
       <main className="flex-1">
       <section
-       className="relative top-0 md:py-16 h-[400px] px-4 md:px-6 lg:px-10 bg-contain bg-center bg-no-repeat bg-w-full"
-       style={{ backgroundImage: `url(https://th.bing.com/th/id/OIP.pNTgRo7z0-em0RVjflhABQAAAA?rs=1&pid=ImgDetMain)` }}
+       className="relative top-0 md:py-16 h-[400px] px-4 md:px-6 lg:px-10 bg-cover bg-center bg-no-repeat"
+       style={{ backgroundImage: `url(${carImage.src})` }}
     >
       <div className="absolute top-0 right-0 flex flex-col items-start gap-4 p-2">
         <div>
@@ -280,72 +280,52 @@ export function Homepage_v2() {
           </Carousel>
           
         </section>
-        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10">
+        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10 bg-secondary">
           <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
             <div className="space-y-6 md:space-y-8">
               <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Explore our fleet</h2>
-                <p className="text-muted-foreground md:text-lg">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-background">Explore our fleet</h2>
+                <p className="text-background md:text-lg">
                   Choose from a wide range of vehicles to fit your needs.
                 </p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                    <img
-                      src="/placeholder.svg"
-                      width={200}
-                      height={150}
-                      alt="Sedan"
-                      className="rounded-lg" />
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+                <Card className="rounded-xl border-foreground hover:border-background transition-colors" >
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <CarIcon className="w-[200px] h-[150px] rounded-lg  py-3"/>
                     <div className="text-center">
-                      <h3 className="text-xl font-semibold">Sedans</h3>
-                      <p className="text-muted-foreground">Comfortable and efficient.</p>
+                      <h3 className="text-4xl font-bold text-background ">Sedans</h3>
+                      <p className="text-background">Comfortable and efficient.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                    <img
-                      src="/placeholder.svg"
-                      width={200}
-                      height={150}
-                      alt="SUV"
-                      className="rounded-lg" />
+                <Card className="rounded-xl border-foreground hover:border-background transition-colors " >
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <SUVIcon className="w-[150px] h-[150px] rounded-lg  py-3"/>
                     <div className="text-center">
-                      <h3 className="text-xl font-semibold">SUVs</h3>
-                      <p className="text-muted-foreground">Spacious and versatile.</p>
+                      <h3 className="text-4xl font-semibold text-background">SUVs</h3>
+                      <p className="text-background">Spacious and versatile.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                    <img
-                      src="/placeholder.svg"
-                      width={200}
-                      height={150}
-                      alt="Luxury"
-                      className="rounded-lg" />
+                <Card className="rounded-xl border-foreground hover:border-background transition-colors" >
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <LimoIcon className="w-[150px] h-[150px]  py-3"/>
                     <div className="text-center">
-                      <h3 className="text-xl font-semibold">Luxury</h3>
-                      <p className="text-muted-foreground">Indulge in style and comfort.</p>
+                      <h3 className="text-4xl font-semibold text-background">Luxury </h3>
+                      <p className="text-muted-foreground text-background">Indulge in style and comfort.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                    <img
-                      src="/placeholder.svg"
-                      width={200}
-                      height={150}
-                      alt="Vans"
-                      className="rounded-lg" />
+                <Card className="rounded-xl border-foreground hover:border-background transition-colors" >
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <CaravanIcon className="w-[200px] h-[150px] rounded-lg text- py-3"/>
                     <div className="text-center">
-                      <h3 className="text-xl font-semibold">Vans</h3>
-                      <p className="text-muted-foreground">Spacious and practical.</p>
+                      <h3 className="text-4xl font-semibold text-background">Vans</h3>
+                      <p className="text-muted-foreground text-background">Spacious and practical.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
@@ -440,7 +420,7 @@ export function Homepage_v2() {
         </section>
       </main>
       <footer
-        className="flex items-center justify-between h-fit px-4 md:px-6 border-b bg-primary text-primary-foreground py-6 md:py-12">
+        className="flex items-center justify-between h-fit px-4 md:px-6 border-b bg-secondary text-primary-foreground py-6 md:py-12 ">
           <div className="container max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
         <div className="grid gap-1">
           <h3 className="font-semibold">Company</h3>
@@ -523,25 +503,39 @@ function CarIcon(props) {
 
 function CaravanIcon(props) {
   return (
-    (<svg
+    <svg
       {...props}
+      fill="#000000"
+      height="800px"
+      width="800px"
+      version="1.1"
+      id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <rect width="4" height="4" x="2" y="9" />
-      <rect width="4" height="10" x="10" y="9" />
-      <path d="M18 19V9a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v8a2 2 0 0 0 2 2h2" />
-      <circle cx="8" cy="19" r="2" />
-      <path d="M10 19h12v-2" />
-    </svg>)
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 450 450"
+      xmlSpace="preserve"
+    >
+      <g id="XMLID_15_">
+        <path
+          id="XMLID_898_"
+          d="M383.757,214.898l-44.177-47.332l80.217,0.047V167.5H420v-55c0-30.327-24.673-55-55-55H55
+            c-30.327,0-55,24.673-55,55v180c0,29.278,22.997,53.279,51.875,54.905C58.521,373.303,82.06,392.5,110,392.5
+            c27.906,0,51.424-19.15,58.102-45h113.797c6.678,25.85,30.195,45,58.102,45c27.906,0,51.424-19.15,58.102-45H445h5v-105
+            L383.757,214.898z M340.481,212.5H300v-43.372L340.481,212.5z M140,332.5c0,16.542-13.458,30-30,30s-30-13.458-30-30
+            s13.458-30,30-30S140,315.958,140,332.5z M370,332.5c0,16.542-13.458,30-30,30s-30-13.458-30-30s13.458-30,30-30
+            S370,315.958,370,332.5z M398.102,317.5c-6.678-25.85-30.195-45-58.102-45c-27.906,0-51.424,19.15-58.102,45H168.102
+            c-6.678-25.85-30.195-45-58.102-45c-27.836,0-51.302,19.057-58.047,44.808C39.601,315.799,30,305.254,30,292.5v-180
+            c0-13.785,11.215-25,25-25h310c13.785,0,25,11.215,25,25v25h-0.203H225v30h45v75h102l48,20v55H398.102z"
+        />
+        <path
+          id="XMLID_904_"
+          d="M84.917,242.5h90v-100h-90V242.5z M114.917,172.5h30v40h-30V172.5z"
+        />
+      </g>
+    </svg>
   );
 }
+
 
 
 function ChevronDownIcon(props) {
@@ -559,6 +553,63 @@ function ChevronDownIcon(props) {
       strokeLinejoin="round">
       <path d="m6 9 6 6 6-6" />
     </svg>)
+  );
+}
+function SUVIcon(props) {
+  return (
+    <svg
+      {...props}
+      fill="#000000"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width="800px"
+      height="800px"
+      viewBox="0 0 260 140"
+      enableBackground="new 0 0 260 140"
+      xmlSpace="preserve"
+    >
+      <path d="M246,90.011V59.995c0-5.523-4.48-9.995-10-9.995h-50L156.97,6.416C155.11,3.634,152.34,2,149,2H28
+        c-5.52,0-10,4.446-10,9.969V30h-8c-4.42,0-8,3.56-8,7.983v40.022C2,82.427,5.58,86,10,86h8v20h16.458
+        c2.8-15.959,16.702-28.066,33.462-28.066c16.75,0,30.708,12.107,33.518,28.066h72.958c2.8-15.959,16.764-28.066,33.524-28.066
+        c16.75,0,30.624,12.107,33.434,28.066H250c4.42,0,8-3.563,8-7.985v-8.004H246z M86,50H30V13.97h56V50z M98,50V13.97h48L170,50H98z
+        M68,138c-14.336,0-26.083-11.706-26.083-26.051s11.664-26.014,26-26.014s26,11.669,26,26.014S82.336,138,68,138z M67.917,99.943
+        c-6.617,0-12,5.386-12,12.006c0,6.621,5.383,12.006,12,12.006s12-5.386,12-12.006C79.917,105.329,74.534,99.943,67.917,99.943z
+        M208,138c-14.337,0-26.083-11.706-26.083-26.051s11.663-26.014,26-26.014s26,11.669,26,26.014S222.337,138,208,138z
+        M207.917,99.943c-6.617,0-12,5.386-12,12.006c0,6.621,5.383,12.006,12,12.006s12-5.386,12-12.006
+        C219.917,105.329,214.534,99.943,207.917,99.943z"/>
+    </svg>
+  );
+}
+
+
+
+function LimoIcon(props) {
+  return (
+    <svg
+      {...props}
+      fill="#000000"
+      width="800px"
+      height="800px"
+      viewBox="0 -43.14 122.88 122.88"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      style={{ enableBackground: "new 0 0 122.88 36.6",transform:"scaleX(-1)" }}
+      xmlSpace="preserve"
+    >
+      <style type="text/css">
+        {".st0{fill-rule:evenodd;clip-rule:evenodd;}"}
+      </style>
+      <g>
+        <path
+          className="st0"
+          d="M0,23.97c0.29-1.63,1.11-2.63,2.72-2.69c-0.14-1.7,0.18-3.13,0.92-4.31c0.35-0.55,0.79-1.04,1.33-1.47 c1.87-1.52,3.99-1.68,6.3-2.1c2.24-0.41,4.48-0.75,6.71-1.01c2.7-0.32,5.41-0.53,8.12-0.61c1.25-0.04,0.95,0.03,1.95-0.73 c4.87-3.76,10.17-6.85,15.72-9.52C45.7,0.55,48.18,0.08,51.09,0C56.91,0,80,0,85.82,0c3.85,0.02,7.13,0.9,9.88,2.56l10.58,8.14 c3.53,0.23,7.05,0.46,10.58,0.7c2.16-0.06,3.81,0.68,4.44,3.02v7.15c2.99,0.77,1.04,7.66-0.3,9.17c-1.18,1.33-2.26,1.18-3.84,1.18 h-9.43c1.81-13.63-12.08-16.54-17.8-9.12c-1.89,2.45-2.18,5.79-1.39,9.72H28.45c2.19-10.1-4.33-14.21-10.33-13.62 c-7.72,0.76-9.75,6.95-8.42,13.74H3.01C1.11,32.72,0.22,31.2,0,28.63V23.97L0,23.97z M20.04,25.27v2.76h2.76 C22.47,26.68,21.4,25.61,20.04,25.27L20.04,25.27z M22.8,29.83h-2.76v2.76C21.4,32.26,22.47,31.19,22.8,29.83L22.8,29.83z M19.15,32.7h-0.02h0.01H19.15L19.15,32.7z M18.24,32.59v-2.76h-2.76C15.81,31.19,16.88,32.26,18.24,32.59L18.24,32.59z M15.48,28.03h2.76v-2.76C16.88,25.61,15.81,26.67,15.48,28.03L15.48,28.03z M98.8,25.27v2.76h2.76 C101.23,26.68,100.16,25.61,98.8,25.27L98.8,25.27z M101.67,28.92v0.02l0-0.01L101.67,28.92L101.67,28.92z M101.57,29.83H98.8v2.76 C100.16,32.26,101.23,31.19,101.57,29.83L101.57,29.83z M97.92,32.7h-0.02h0.01H97.92L97.92,32.7z M97.01,32.59v-2.76h-2.76 C94.58,31.19,95.65,32.26,97.01,32.59L97.01,32.59z M94.24,28.03h2.76v-2.76C95.65,25.61,94.58,26.67,94.24,28.03L94.24,28.03z M33.07,10.7V14h20.09l1.56-11.48h-4.58c-3.65,0.43-4.24,0.55-7.55,2.31c-2.73,1.45-5.22,3.04-7.87,4.77 C34.17,9.96,33.61,10.33,33.07,10.7L33.07,10.7z M77.54,2.39l-1.73,11.62h11.53l2.37-2.57L91,10.04c-0.12-6.79-0.93-7.55-6.95-7.58 L77.54,2.39L77.54,2.39z M58.08,2.39l-1.73,11.62h15.37l1.52-11.53L58.08,2.39L58.08,2.39z M19.14,21.27 c4.23,0,7.67,3.43,7.67,7.67c0,4.23-3.43,7.67-7.67,7.67c-4.23,0-7.67-3.43-7.67-7.67C11.47,24.7,14.9,21.27,19.14,21.27 L19.14,21.27z M97.9,21.27c4.23,0,7.67,3.43,7.67,7.67c0,4.23-3.43,7.67-7.67,7.67c-4.23,0-7.67-3.43-7.67-7.67 C90.24,24.7,93.67,21.27,97.9,21.27L97.9,21.27z"
+        />
+      </g>
+    </svg>
   );
 }
 
