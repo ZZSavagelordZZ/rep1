@@ -295,7 +295,7 @@ export function Homepage_v2() {
                   <CarIcon className="w-[200px] h-[150px] rounded-lg  py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-bold text-background ">Sedans</h3>
-                      <p className="text-background">Comfortable and efficient.</p>
+                      <p className="text-background">Comfortable <br/>and efficient.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
@@ -305,7 +305,7 @@ export function Homepage_v2() {
                   <SUVIcon className="w-[150px] h-[150px] rounded-lg  py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-semibold text-background">SUVs</h3>
-                      <p className="text-background">Spacious and versatile.</p>
+                      <p className="text-background">Spacious <br/>and versatile.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
@@ -315,7 +315,7 @@ export function Homepage_v2() {
                   <LimoIcon className="w-[150px] h-[150px]  py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-semibold text-background">Luxury </h3>
-                      <p className="text-muted-foreground text-background">Indulge in style and comfort.</p>
+                      <p className="text-background">Indulge in style and comfort.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
@@ -325,7 +325,7 @@ export function Homepage_v2() {
                   <CaravanIcon className="w-[200px] h-[150px] rounded-lg text- py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-semibold text-background">Vans</h3>
-                      <p className="text-muted-foreground text-background">Spacious and practical.</p>
+                      <p className=" text-background">Spacious and practical.</p>
                     </div>
                     <Button variant="outline">Rent Now</Button>
                   </CardContent>
@@ -420,7 +420,7 @@ export function Homepage_v2() {
         </section>
       </main>
       <footer
-        className="flex items-center justify-between h-fit px-4 md:px-6 border-b bg-secondary text-primary-foreground py-6 md:py-12 ">
+        className="flex items-center justify-between h-fit px-4 md:px-6 border-b bg-primary text-primary-foreground py-6 md:py-12 ">
           <div className="container max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
         <div className="grid gap-1">
           <h3 className="font-semibold">Company</h3>
