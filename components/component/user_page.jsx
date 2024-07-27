@@ -62,7 +62,7 @@ export function User_Page() {
                   <div>1985-06-15</div>
                 </div>
                 <div className="grid gap-2">
-                  <Label className="text-primary-foreground">Driver&apos;s License</Label>
+                  <Label className="text-primary-foreground">Driver&apos;s License:</Label>
                   <div>ABC123456</div>
                 </div>
                 <div className="grid gap-2">
