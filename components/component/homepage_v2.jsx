@@ -166,7 +166,7 @@ export function Homepage_v2() {
                 </Avatar>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem>My Account</DropdownMenuItem>
+                <DropdownMenuItem><Link href="/User_Account">My Account</Link></DropdownMenuItem>
                 <DropdownMenuItem>Settings</DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>Logout</DropdownMenuItem>
@@ -179,19 +179,17 @@ export function Homepage_v2() {
        className="relative top-0 md:py-16 h-[400px] px-4 md:px-6 lg:px-10 bg-cover bg-center bg-no-repeat"
        style={{ backgroundImage: `url(${carImage.src})` }}
     >
-      <div className="absolute top-0 right-0 flex flex-col items-start gap-4 p-2">
+      <div className="absolute top-0 left-[45vw] flex flex-col  gap-4 p-2 w-[45vw]">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Find your perfect ride</h1>
-          <p className="text-sm md:text-base mt-1 md:mt-2">
-            Rent the car you need, when you need it. Our wide selection and easy booking process make it simple.
-          </p>
-          <form className="flex gap-1 mt-2">
+          <h1 className="text-5xl font-bold tracking-tight ">Find your perfect ride</h1>
+          
+          <form className="flex gap-2 mt-6">
             <input
               type="text"
               placeholder="Search by location or vehicle"
-              className="flex-1 p-1 border border-gray-300 rounded"
+              className="flex-1 p-2 border border-gray-300 rounded-lg w-full"
             />
-            <Button type="submit" className="whitespace-nowrap p-1">
+            <Button type="submit" className="whitespace-nowrap p-4">
               Search
             </Button>
           </form>
@@ -200,16 +198,16 @@ export function Homepage_v2() {
     </section>
 
        
-        <section className="relative w-full h-[400px] md:h-[500px] lg:h-[500px] overflow-hidden bg-muted">
-          <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
+        <section className="relative  w-full h-[400px] md:h-[500px] lg:h-[500px] overflow-hidden bg-muted">
+          <div className="w-full mx-auto space-y-6 pt-5 pb-5 md:space-y-8 lg:space-y-10 bg-muted">
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Special Offers</h2>
               <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl">
                 Check out our latest deals and discounts on car rentals.
               </p></div>
             </div>
-            <Carousel>
-            <CarouselContent>
+            <Carousel >
+            <CarouselContent >
               <CarouselItem className='h-full'>
                 <div
                   className="flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-6 lg:px-10">
@@ -220,7 +218,7 @@ export function Homepage_v2() {
                     <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground">
                     Rent the car of your dreams and explore the wilderness. 15% off for the summer season on choice* cars.
                     </p>
-                    <Button className="bg-primary text-primary-foreground">Book Now</Button>
+                    <Button className="bg-customyello text-primary-foreground ">Book Now</Button>
                   </div>
                   <img
                   src="https://th.bing.com/th/id/OIP.m9QHgUPLEGoc9Z01TrxDEwHaEi?w=259&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
@@ -280,7 +278,7 @@ export function Homepage_v2() {
           </Carousel>
           
         </section>
-        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10 bg-secondary">
+        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-10 bg-primary">
           <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
             <div className="space-y-6 md:space-y-8">
               <div className="text-center">
@@ -290,8 +288,8 @@ export function Homepage_v2() {
                 </p>
               </div>
               <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-                <Card className="rounded-xl border-foreground hover:border-background transition-colors" >
-                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                <Card className="rounded-xl  border-foreground hover:border-background transition-colors" >
+                  <CardContent className=" rounded-xl bg-customgrey flex flex-col items-center justify-center gap-4 p-6  ">
                   <CarIcon className="w-[200px] h-[150px] rounded-lg  py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-bold text-background ">Sedans</h3>
@@ -301,7 +299,7 @@ export function Homepage_v2() {
                   </CardContent>
                 </Card>
                 <Card className="rounded-xl border-foreground hover:border-background transition-colors " >
-                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-customgrey ">
                   <SUVIcon className="w-[150px] h-[150px] rounded-lg  py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-semibold text-background">SUVs</h3>
@@ -311,7 +309,7 @@ export function Homepage_v2() {
                   </CardContent>
                 </Card>
                 <Card className="rounded-xl border-foreground hover:border-background transition-colors" >
-                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-customgrey ">
                   <LimoIcon className="w-[150px] h-[150px]  py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-semibold text-background">Luxury </h3>
@@ -321,7 +319,7 @@ export function Homepage_v2() {
                   </CardContent>
                 </Card>
                 <Card className="rounded-xl border-foreground hover:border-background transition-colors" >
-                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-destructive ">
+                  <CardContent className=" rounded-xl flex flex-col items-center justify-center gap-4 p-6 bg-customgrey ">
                   <CaravanIcon className="w-[200px] h-[150px] rounded-lg text- py-3"/>
                     <div className="text-center">
                       <h3 className="text-4xl font-semibold text-background">Vans</h3>
@@ -472,7 +470,7 @@ export function Homepage_v2() {
           </Link>
         </div>
         
-      </div><h3> &#169;2024 Renta, Rent A Car Services</h3>
+      </div><h3 className="absolute right-5"> &#169;2024 Renta, Rent A Car Services</h3>
         </footer>
     </div>)
   );
