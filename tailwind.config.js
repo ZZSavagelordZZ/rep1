@@ -73,7 +73,12 @@ module.exports = {
                 "height": "0"
               }
             }
-          }
-},
+          },
+          dropShadow: {
+            glow: [
+              "0 0px 20px rgba(255, 215, 0, 0.99)",
+              "0 0px 65px rgba(255, 215, 0, 0.5)"
+            ],
+}},
   plugins: [require("tailwindcss-animate")],
 }
